@@ -156,6 +156,7 @@ ORDER BY price_2026 DESC;
 SELECT
     customer_name,
     customer_part_number,
+    company_part_number,
     model,
     price_2026
 FROM piston_rings_view
