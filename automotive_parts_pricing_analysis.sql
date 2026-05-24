@@ -14,7 +14,7 @@ CREATE TABLE piston_rings (
     part_id SERIAL PRIMARY KEY,
     customer_id INT NOT NULL REFERENCES customers(customer_id),
     customer_part_number VARCHAR(50) UNIQUE NOT NULL,
-    tpr_part_number VARCHAR(50),
+    company_part_number VARCHAR(50),
     model VARCHAR(10),
     description TEXT,
     price_2026 NUMERIC(10,4)
@@ -29,7 +29,7 @@ VALUES
 INSERT INTO piston_rings (
     customer_id,
     customer_part_number,
-    tpr_part_number,
+    company_part_number,
     model,
     description,
     price_2026
@@ -59,7 +59,7 @@ SELECT
     c.customer_name,
     p.part_id,
     p.customer_part_number,
-    p.tpr_part_number,
+    p.company_part_number,
     p.model,
     p.description,
     p.price_2026
@@ -109,7 +109,7 @@ WHERE customer_name <> 'B_Customer';
 SELECT
     c.customer_name,
     p.customer_part_number,
-    p.tpr_part_number,
+    p.company_part_number,
     p.model,
     p.description,
     p.price_2026
@@ -145,7 +145,7 @@ ORDER BY average_price_2026 DESC;
 SELECT
     customer_name,
     customer_part_number,
-    tpr_part_number,
+    company_part_number,
     model,
     price_2026
 FROM piston_rings_view
