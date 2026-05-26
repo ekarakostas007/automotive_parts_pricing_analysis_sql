@@ -162,5 +162,3 @@ SELECT
 FROM piston_rings_view
 WHERE price_2026 > 0.5000
 ORDER BY price_2026 DESC;
-
-
